@@ -56,6 +56,12 @@ jobs:
 
       # START: Check practical exercise
 
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run backend tests
+        run: python -m pytest -q
+
       - name: Check for pytest keyphrase in requirements.txt
         id: check-for-pytest
         continue-on-error: true
